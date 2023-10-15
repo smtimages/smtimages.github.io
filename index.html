@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+        <script src="script.js" defer></script>
+</head>
+
+<body>
+
+
+
+    <div class="lightbox">
+        <div class="wrapper">
+            <header>
+                <div class="photographer">
+                    <i class="fa-solid fa-camera"></i>
+                    <span></span>
+                </div>
+                <div class="buttons">
+                    <i class="fa-solid fa-download"></i>
+                    <i class="fa-solid fa-x"></i>
+
+                </div>
+            </header>
+            <div class="preview-img">
+                <div class="img"><img src="" alt="preview-img"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="search">
+        <img src="img/search-img.jpg" alt="search-img">
+        <div class="content">
+            <h1>SMT Gallery with all images </h1>
+            <p>Search and dounload images within a second</p>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search images">
+
+            </div>
+        </div>
+
+        
+
+    </section>
+
+    <section class="Gallery">
+        <ul class="images">
+            <li class="card">
+                <img src="img/img-1.jpg" alt="img">
+                <div class="details">
+                    <div class="photographer">
+                        <i class="fa-solid fa-camera"></i>
+                        <span>Meriya Loznevaya</span>
+                    </div>
+                    <button><i class="fa-solid fa-download"></i></button>
+                </div>
+            </li>
+            <!-- <li class="card"><img src="img/img-2.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-3.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-4.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-5.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-6.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-7.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-8.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-9.jpg" alt="img"></li>
+            <li class="card"><img src="img/img-10.jpg" alt="img"></li> -->
+        </ul>
+        <button class="load-more">Load More</button>
+
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            $('#menu').click(function () {
+                $(this).toggleClass('fa-times');
+                $('.navbar').toggleClass('nav-toggle');
+
+            });
+
+            $(window).on('scroll load', function () {
+
+                $('#menu').removeClass('fa-times');
+                $('.navbar').removeClass('nav-toggle');
+
+                if ($(window).scrollTop() > 60) {
+                    $('header').addClass('header-active');
+                } else {
+                    $('header').removeClass('header-active');
+                }
+
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>
